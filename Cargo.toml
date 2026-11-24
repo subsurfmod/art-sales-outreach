@@ -3,7 +3,7 @@ name = "art-outreach"
 version = "0.1.0"
 edition = "2021"
 description = "High-efficiency Rust CLI & Antigravity skill for physical artwork sales, connector lead discovery, async website enrichment, MX verification, and multi-inbox email outreach."
-license = "MIT"
+license = "GPL-3.0-or-later"
 
 [[bin]]
 name = "art-outreach"
