@@ -1,0 +1,10 @@
+/target
+/bin
+/art-outreach-workspace
+*.db
+*.db-shm
+*.db-wal
+senders.json
+artist_profile.json
+.env
+.DS_Store

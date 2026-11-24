@@ -1,0 +1,37 @@
+[package]
+name = "art-outreach"
+version = "0.1.0"
+edition = "2021"
+description = "High-efficiency Rust CLI & Antigravity skill for physical artwork sales, connector lead discovery, async website enrichment, MX verification, and multi-inbox email outreach."
+license = "MIT"
+
+[[bin]]
+name = "art-outreach"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+chrono = { version = "0.4", features = ["clock"] }
+clap = { version = "4", features = ["derive"] }
+csv = "1"
+futures = "0.3"
+hickory-resolver = "0.24"
+lettre = { version = "0.11", default-features = false, features = ["builder", "smtp-transport", "tokio1", "tokio1-rustls-tls", "hostname"] }
+rand = "0.8"
+regex = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "gzip", "brotli", "deflate"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12"] }
+scraper = "0.22"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "sync"] }
+url = "2"
+uuid = { version = "1", features = ["v4"] }
+webpki-roots = "0.26"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true

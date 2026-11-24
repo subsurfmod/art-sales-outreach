@@ -1,0 +1,38 @@
+{
+  "notes": "Store passwords/API keys as 'env:VAR_NAME' so secrets are never committed to disk. Add multiple mailboxes to scale daily volume safely via round-robin rotation.",
+  "senders": [
+    {
+      "enabled": true,
+      "type": "smtp",
+      "from_name": "Your Name",
+      "email": "hello@yourartstudio.com",
+      "reply_to": "hello@yourartstudio.com",
+      "smtp_host": "smtp.gmail.com",
+      "smtp_port": 587,
+      "smtp_user": "hello@yourartstudio.com",
+      "smtp_password": "env:ART_SMTP_PASSWORD_1",
+      "imap_host": "imap.gmail.com",
+      "imap_port": 993,
+      "imap_drafts_folder": "[Gmail]/Drafts",
+      "daily_limit": 20
+    },
+    {
+      "enabled": false,
+      "type": "resend",
+      "from_name": "Your Name Studio",
+      "email": "studio@yourartstudio.co",
+      "reply_to": "hello@yourartstudio.com",
+      "api_key": "env:RESEND_API_KEY",
+      "daily_limit": 40
+    },
+    {
+      "enabled": false,
+      "type": "brevo",
+      "from_name": "Your Name",
+      "email": "inquiries@yourartstudio.co",
+      "reply_to": "hello@yourartstudio.com",
+      "api_key": "env:BREVO_API_KEY",
+      "daily_limit": 40
+    }
+  ]
+}

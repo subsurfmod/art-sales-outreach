@@ -1,0 +1,86 @@
+{
+  "interior_designer": {
+    "touch_1": {
+      "subject": "Original {{medium}} for {{company}} projects?",
+      "body": "{{greeting}}\n\n{{custom_opener}}.\n\nI'm {{artist_name}}, a visual artist based in {{artist_location}} creating {{style_summary}} ({{size_range}}).\n\nI work directly with interior design studios on statement pieces and custom-sized commissions, offering {{trade_discount}} and direct crated shipping.\n\nWould you be open to me sending a 5-piece private trade lookbook (no attachment yet), or putting a quick digital mockup onto a wall you're currently styling?\n\nPortfolio: {{portfolio_url}}\n\nBest,\n{{signature}}\n\n{{opt_out_line}}"
+    },
+    "touch_2": {
+      "subject": "Re: Original {{medium}} for {{company}} projects?",
+      "body": "{{greeting}}\n\nQuick bump on my note earlier this week — if you have an upcoming client room that needs a focal piece in the {{size_range}} range, I'd be happy to drop 2–3 works digitally onto a photo of the room at no charge so you can preview scale and palette.\n\nYou can also browse current available works here: {{lookbook_url}}\n\nWarmly,\n{{signature}}"
+    },
+    "touch_3": {
+      "subject": "Closing the loop — {{studio_name}} trade sheet",
+      "body": "{{greeting}}\n\nTotally understand you're busy with client installs. I'll leave my trade catalog link here in case an upcoming project calls for {{style_summary}}:\n{{lookbook_url}}\n\nNo need to reply unless a project comes up — wishing {{company}} a great season.\n\nBest,\n{{signature}}"
+    }
+  },
+  "art_consultant": {
+    "touch_1": {
+      "subject": "Artist roster / available {{medium}} — {{artist_name}}",
+      "body": "{{greeting}}\n\n{{custom_opener}}.\n\nI'm {{artist_name}} ({{artist_location}}), creating {{style_summary}} sized from {{size_range}} ({{price_range}}), built for residential, corporate, and hospitality installations.\n\nI maintain studio inventory ready to ship as well as site-specific commissions on reliable timelines, with {{trade_discount}} for advisory partners.\n\nWould you like me to share a concise 1-page available-works PDF for your artist registry?\n\nSelected works: {{portfolio_url}}\n\nBest,\n{{signature}}\n\n{{opt_out_line}}"
+    },
+    "touch_2": {
+      "subject": "Re: Artist roster / available {{medium}} — {{artist_name}}",
+      "body": "{{greeting}}\n\nFollowing up briefly in case you're curating for any upcoming corporate or hospitality briefs. Happy to send a curated shortlist matched to a specific palette or wall dimension whenever helpful.\n\nCurrent catalog: {{lookbook_url}}\n\nBest,\n{{signature}}"
+    },
+    "touch_3": {
+      "subject": "Quick note for your artist registry — {{artist_name}}",
+      "body": "{{greeting}}\n\nI won't crowd your inbox further — here's a permanent link to my trade/advisory catalog if a brief ever fits:\n{{lookbook_url}}\n\nBest,\n{{signature}}"
+    }
+  },
+  "hospitality": {
+    "touch_1": {
+      "subject": "Statement {{medium}} for {{company}}",
+      "body": "{{greeting}}\n\n{{custom_opener}}.\n\nI'm {{artist_name}}, creating {{style_summary}} ({{size_range}}) designed to anchor lobbies, lounges, and guest suites.\n\nBecause I work directly from my studio in {{artist_location}}, I can produce cohesive multi-piece series tailored to your interior palette with {{trade_discount}}.\n\nCould I send over a short lookbook of available pieces and recent installation examples?\n\nWorks: {{portfolio_url}}\n\nBest,\n{{signature}}\n\n{{opt_out_line}}"
+    },
+    "touch_2": {
+      "subject": "Re: Statement {{medium}} for {{company}}",
+      "body": "{{greeting}}\n\nJust floating this back up — if you're refreshing any guest spaces or planning a new property, I'd be glad to mock up a few scale options on your space photos for easy review.\n\nCatalog: {{lookbook_url}}\n\nBest,\n{{signature}}"
+    },
+    "touch_3": {
+      "subject": "Leaving my studio link for future projects",
+      "body": "{{greeting}}\n\nI'll keep this brief and close the loop here. If a future renovation or opening calls for original artwork, my catalog is always updated at {{lookbook_url}}.\n\nWarm regards,\n{{signature}}"
+    }
+  },
+  "stager": {
+    "touch_1": {
+      "subject": "Original statement art for {{company}} stagings",
+      "body": "{{greeting}}\n\n{{custom_opener}}.\n\nI'm {{artist_name}} ({{artist_location}}), painting {{style_summary}} ({{size_range}}). Original artwork photographs far better in luxury listings than mass-market prints — and homebuyers frequently ask to purchase the pieces with the property.\n\nI offer staging partners flexible consignment/placement terms plus a referral commission whenever a buyer keeps a piece.\n\nOpen to seeing 5 available statement pieces sized for living rooms and entryways?\n\nPortfolio: {{portfolio_url}}\n\nBest,\n{{signature}}\n\n{{opt_out_line}}"
+    },
+    "touch_2": {
+      "subject": "Re: Original statement art for {{company}} stagings",
+      "body": "{{greeting}}\n\nQuick follow-up — if you have an upcoming luxury listing with a large blank focal wall, I'd love to send dimensions and pricing on pieces ready to hang right now.\n\nCatalog: {{lookbook_url}}\n\nBest,\n{{signature}}"
+    },
+    "touch_3": {
+      "subject": "Resource for future luxury listings — {{artist_name}}",
+      "body": "{{greeting}}\n\nNo worries if timing isn't right — I'll leave my available-works link here for future stagings: {{lookbook_url}}. Wishing {{company}} quick closings this quarter.\n\nBest,\n{{signature}}"
+    }
+  },
+  "gallery": {
+    "touch_1": {
+      "subject": "Artist inquiry — {{artist_name}} ({{medium}})",
+      "body": "{{greeting}}\n\n{{custom_opener}}.\n\nI'm {{artist_name}}, an artist based in {{artist_location}} working in {{medium}} — specifically {{style_summary}} ({{size_range}}, {{price_range}}).\n\nI'm selective about the spaces I reach out to, and my current series feels closely aligned with {{company}}'s program. Would you be open to reviewing a concise 6-work portfolio link?\n\nSelected works: {{portfolio_url}}\n\nThank you for your time,\n{{signature}}\n\n{{opt_out_line}}"
+    },
+    "touch_2": {
+      "subject": "Re: Artist inquiry — {{artist_name}} ({{medium}})",
+      "body": "{{greeting}}\n\nJust checking back briefly in case you review new artist portfolios on a seasonal schedule — if there's a preferred submission window or contact for {{company}}, I'd greatly appreciate a pointer.\n\nPortfolio: {{portfolio_url}}\n\nWarmly,\n{{signature}}"
+    },
+    "touch_3": {
+      "subject": "Thank you — {{artist_name}}",
+      "body": "{{greeting}}\n\nI won't follow up again — thank you for the work {{company}} is doing. I'll keep an eye on your upcoming exhibitions.\n\nBest,\n{{signature}}"
+    }
+  },
+  "default": {
+    "touch_1": {
+      "subject": "Original {{medium}} — quick hello from {{artist_name}}",
+      "body": "{{greeting}}\n\n{{custom_opener}}.\n\nI'm {{artist_name}} ({{artist_location}}), creating {{style_summary}} ({{size_range}}, {{price_range}}).\n\nI work directly with collectors, studios, and spaces looking for original physical pieces (and custom commissions) with direct studio shipping.\n\nWould you be open to me sharing a short private lookbook of available pieces?\n\nPortfolio: {{portfolio_url}}\n\nBest,\n{{signature}}\n\n{{opt_out_line}}"
+    },
+    "touch_2": {
+      "subject": "Re: Original {{medium}} — quick hello from {{artist_name}}",
+      "body": "{{greeting}}\n\nQuick bump on my earlier note — happy to send a small curated selection tailored to your space or put together a digital wall mockup if helpful.\n\nWorks: {{lookbook_url}}\n\nBest,\n{{signature}}"
+    },
+    "touch_3": {
+      "subject": "Closing the loop — {{artist_name}}",
+      "body": "{{greeting}}\n\nTotally understand timing might not line up right now — I'll leave my portfolio here for the future: {{portfolio_url}}.\n\nAll the best,\n{{signature}}"
+    }
+  }
+}
