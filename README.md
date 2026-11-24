@@ -1,29 +1,19 @@
 # art-sales-outreach
 
-A full-fledged, **Rust-powered Art Seller Assistant** & **AI Agent Skill (`SKILL.md`)** for selling **physical artwork** end-to-end — combining strict real-artwork authenticity verification, anti-slop artist websites & museum-grade portfolios, 3D & 2D social media artwork videos, and high-deliverability multi-inbox customer outreach.
+A full-fledged, **Rust-powered Art Seller Assistant** & **AI Agent Skill Suite** for selling **physical artwork** end-to-end — featuring an effortless **First-Time Setup Wizard**, a built-in **Interactive Local Preview Studio**, strict **Zero-AI-Artwork / Zero-AI-Artist** authenticity auditing, anti-slop artist websites & museum-grade portfolios, 3D & 2D social media artwork video orchestration, and high-deliverability multi-inbox customer outreach.
 
 > **STRICT AUTHENTICITY PROTOCOL**: Zero AI-generated images of the artwork or the artist. Built-in Rust SHA-256 asset registry & build auditor (`art-outreach assets register` / `audit`) screens filenames, EXIF/PNG/XMP/C2PA metadata, and external stock/AI hosts so every website, viewing room, and 3D/2D video showcases 100% authentic artist-supplied photography and studio footage.
 
 ---
 
-## Four Integrated Pillars
+## Packed Skill Suite (`SKILL.md` + `skills/`)
 
-1. **Strict Real-Asset Authenticity Gate (`art-outreach assets`)**
-   - SHA-256 manifest ledger (`real_assets/manifest.json`) for every real painting scan, macro crop, installation shot, studio clip, and artist portrait.
-   - Automatic AI-marker & stock-host screening (`Midjourney`, `DALL-E`, `Stable Diffusion`, `ComfyUI`, `Flux`, `C2PA`, `Unsplash`, `Pexels`, etc.).
-   - Hard build gate (`art-outreach assets audit --target <dir>`) that fails CI/publishing if any website or video project references an unregistered or AI-generated image.
-2. **Anti-Slop Artist Websites & Popular-Artist Portfolios (`art-outreach studio`)**
-   - Built on **Anthropic's `frontend-design` / `prompting_for_frontend_aesthetics`**, **ASCII wireframe-first layout constraints**, **`obra/superpowers`** spec-and-verify discipline, and museum-grade contemporary artist portfolio standards (Online Viewing Rooms, Catalogue Raisonné, Academic CV, 60"-hang View-on-Wall scale preview, contextual Collector Inquiry drawers).
-   - **6 radically distinct website archetypes** (`white-cube-monograph`, `catalogue-raisonne`, `editorial-brutalist`, `atmospheric-salon`, `tactile-studio-notebook`, `kinetic-exhibition`) — zero generic Inter/purple-gradient SaaS fodder.
-3. **3D & 2D Social Media Artwork Video Pipeline**
-   - **6 distinct video formats** orchestrating local 3D & 2D video skills (`blender-film`, `blender-forest`, `onetake`, `motionmaxxing`, `motion-doctrine`, `hyperframes`, `remotion-*`, `pixel2motion`, `ffmpeg`, `youtube-shorts-uploader` — inspired by `zhuyansen/awesome-claude-video-skills`).
-   - Stages the artist's unaltered real scan on 3D stretched linen canvases in architectural rooms with raking light, or builds single-take 2D kinetic exhibition reels and narrated studio Shorts.
-4. **Connector-Multiplier Lead Engine & Multi-Inbox Rust Email Outreach (`art-outreach crm|discover|enrich|verify|deliverability|outreach`)**
-   - Embedded SQLite CRM (`rusqlite` bundled) + permanent suppression list.
-   - Multi-source discovery: Google Boolean query generator, Serper/Brave/Google CSE APIs, free OpenStreetMap Overpass local discovery, and robots-respecting directory crawling.
-   - Concurrent `tokio` + `reqwest` website enricher (emails, JSON-LD decision-makers, Instagram/LinkedIn/Pinterest, trade/submission signals, aesthetic hooks).
-   - Concurrent `hickory-resolver` live MX verification + 0–100 Connector-Multiplier scoring + SPF/DKIM/DMARC sender domain auditor.
-   - Multi-touch personalized sequences across rotated **SMTP** (`lettre` rustls), pure-Rust **TLS IMAP Drafts** upload & reply/bounce/opt-out scanning, or **Resend / Brevo** HTTP APIs.
+This repository ships as a complete skill bundle — install all 4 skills together:
+
+1. **`art-sales-outreach`** ([`SKILL.md`](./SKILL.md)) — Master Art Seller Assistant orchestrating all pillars & the Rust CLI (`art-outreach`).
+2. **`art-first-time-setup`** ([`skills/art-first-time-setup/SKILL.md`](./skills/art-first-time-setup/SKILL.md)) — Effortless guided onboarding wizard covering portfolio/real artwork intake, social media & email integrations, website/video/outreach options, and automated initial market research.
+3. **`art-preview-studio`** ([`skills/art-preview-studio/SKILL.md`](./skills/art-preview-studio/SKILL.md)) — Built-in pure-Rust localhost Preview Studio (`http://127.0.0.1:4173`) to compare all 6 anti-slop website archetypes live, toggle 60" View-on-Wall scale & ASCII wireframes, inspect 3D/2D video storyboards, and review email pitches before shipping.
+4. **`art-video-preview-bridge`** ([`skills/art-video-preview-bridge/SKILL.md`](./skills/art-video-preview-bridge/SKILL.md)) — Pre-visualization bridge for Blender 3D clay/viewport snaps, HyperFrames preview, Remotion Studio/stills, OneTake seekable contact sheets, FFmpeg 3×3 storyboard grids, and YouTube Shorts `--dry-run`.
 
 ---
 
@@ -38,35 +28,24 @@ cargo build --release
 # Binary: ./target/release/art-outreach
 ```
 
-### 2. Install as an Agent Skill (Antigravity / Claude Code / Codex)
+### 2. Install All Packed Skills (Antigravity / Claude Code / Codex)
 
 ```bash
 mkdir -p ~/.agents/skills/art-sales-outreach/bin
-cp -r SKILL.md Cargo.toml src templates references ~/.agents/skills/art-sales-outreach/
+cp -r SKILL.md README.md Cargo.toml Cargo.lock src templates references skills ~/.agents/skills/art-sales-outreach/
 cp target/release/art-outreach ~/.agents/skills/art-sales-outreach/bin/art-outreach
+cp -r skills/art-first-time-setup skills/art-preview-studio skills/art-video-preview-bridge ~/.agents/skills/
 ```
 
-### 3. Example Workflow
+### 3. Run Effortless First-Time Setup & Open Live Preview Studio
 
 ```bash
-# 1. Register artist's REAL artwork photos/videos (screens out AI-generated suspects)
-art-outreach assets register --dir art-outreach-workspace/real_assets
+# Interactive setup wizard (portfolio/artwork intake, socials, email backend, initial market research):
+./target/release/art-outreach setup
 
-# 2. Generate a bespoke 4-pillar Master Blueprint & ASCII Website Wireframe
-art-outreach studio blueprint --medium "oil on linen" --mood "warm minimalist" --price-tier "mid-career" --city "Austin"
-art-outreach studio wireframe white-cube-monograph
-
-# 3. Audit your built website or 3D/2D video project before publishing
-art-outreach assets audit --target art-outreach-workspace/website
-
-# 4. Run high-reach connector lead discovery, enrichment, MX verification & outreach
-art-outreach crm init
-art-outreach discover osm-local --city "Austin, Texas" --limit 150
-art-outreach enrich --limit 100 --concurrency 12
-art-outreach verify --profile artist_profile.json
-art-outreach deliverability hello@yourartstudio.com
-art-outreach outreach generate-drafts --profile artist_profile.json --campaign "q1-connectors" --review-out batches/review-touch1.md
-art-outreach outreach send --senders senders.json --campaign "q1-connectors" --dry-run
+# Open the Interactive Local Preview Studio to see all 6 website variations,
+# 60" wall scale, 3D/2D video storyboards, email previews & market research:
+./target/release/art-outreach preview serve --dir art-outreach-workspace/preview --port 4173
 ```
 
 ---
@@ -75,6 +54,8 @@ art-outreach outreach send --senders senders.json --campaign "q1-connectors" --d
 
 ```text
 art-outreach [--db <path>]
+├── setup           [--workspace] [--from-json] [--defaults] [--assets-dir] [--run-osm]
+├── preview         generate | serve [--dir] [--port 4173]
 ├── assets          register | audit | catalog
 ├── studio          variations | wireframe | blueprint
 ├── crm             init | import-urls | import-csv | stats | list | export | suppress | mark-status | next-followups

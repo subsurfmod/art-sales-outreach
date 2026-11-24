@@ -5,6 +5,8 @@ mod discover;
 mod enrich;
 mod imap_client;
 mod outreach;
+mod preview;
+mod setup;
 mod studio;
 mod verify;
 
@@ -17,7 +19,7 @@ use std::process::ExitCode;
 #[command(
     name = "art-outreach",
     version,
-    about = "Full-fledged Rust CLI for physical artwork sales: strict real-asset authenticity auditing, anti-slop website/portfolio ASCII wireframes & variations, 3D/2D video routing, connector lead discovery, async website enrichment, MX verification, and multi-inbox outreach."
+    about = "Full-fledged Rust CLI for physical artwork sales: effortless first-time setup, interactive live preview studio, strict real-asset authenticity auditing, anti-slop website/portfolio ASCII wireframes & variations, 3D/2D video routing, connector lead discovery, async website enrichment, MX verification, and multi-inbox outreach."
 )]
 struct Cli {
     /// Path to SQLite CRM database
@@ -30,6 +32,13 @@ struct Cli {
 
 #[derive(Subcommand, Debug)]
 enum Commands {
+    /// Effortless First-Time Setup Wizard (portfolio/artwork intake, social integrations, email setup, market research & preview)
+    Setup(setup::SetupArgs),
+    /// Generate and serve the Interactive Local Preview Studio (6 live website variations, 60" wall scale, 3D/2D video storyboards, emails)
+    Preview {
+        #[command(subcommand)]
+        cmd: preview::PreviewCommand,
+    },
     /// Strict Zero-AI-Art / Zero-AI-Artist asset registration, SHA-256 manifest, and build audit
     Assets {
         #[command(subcommand)]
@@ -101,6 +110,8 @@ async fn main() -> ExitCode {
 async fn run() -> Result<ExitCode> {
     let cli = Cli::parse();
     match cli.command {
+        Commands::Setup(args) => setup::run_setup(&cli.db, args).await?,
+        Commands::Preview { cmd } => preview::handle_command(&cli.db, cmd)?,
         Commands::Assets { cmd } => {
             let ok = assets::handle_command(cmd)?;
             if !ok {
